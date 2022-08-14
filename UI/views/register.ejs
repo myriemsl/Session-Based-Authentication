@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-form">
+            <% if(typeof errorText != 'undefined') { %>
+                <% errorText.forEach(function(error) { %>
+                    <div class="error-text">
+                        <%= error.msg %>
+                      </div>
+                <% }) %>
+            <% } %>
+             <h1>Register a new account</h1>
+            <form action="/register" method="POST">
+                <div class="form-input">
+                    <input type="email" placeholder="email" name="email">
+                </div>
+                <div class="form-input">
+                    <input type="password" placeholder="password" name="password">
+                </div>
+                <button class="submit-btn">Register</button>
+            </form>
+
+            <div class="auth-question">
+                <h5>
+                 Do you have an account? <a href="/login">Login</a>
+                </h5>
+            </div>
+         </div> 
+   
+        <div class="auth-pic">
+         <img src="../Assets/auth.png" alt="auth">
+        </div>  
+
+       </div>
+
+    <footer>
+        <h5>developed by myriemsl.dev</h5>
+    </footer>
+</body>
+</html>
